@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/fGsz44a.png">
     <style>
         @keyframes move-twink-back {
             from {background-position: 0 0;}
@@ -58,7 +59,7 @@
         }
 
         #coming-soon {
-            font-size: 40px; /* Reduced to 80% of the original size */
+            font-size: 40px; /* Initial size */
             margin-bottom: 30px;
             position: relative;
             z-index: 2;
@@ -66,15 +67,27 @@
         }
 
         .highlight {
-            color: #fcb327; /* Updated color for 'Chuckle' */
+            color: #fcb327;
         }
 
         #countdown {
-            font-size: 60px; /* Increased size */
+            font-size: 60px; /* Initial size */
             font-weight: 600; /* Semibold */
             position: relative;
             z-index: 2;
             color: white; /* White color for the countdown */
+        }
+
+        @media (max-width: 600px) {
+            #countdown {
+                font-size: 30px; /* Smaller size for mobile screens */
+            }
+            #coming-soon {
+                font-size: 20px; /* Adjusted for mobile screens */
+            }
+            #promo-image {
+                max-width: 50%; /* Smaller size for mobile screens */
+            }
         }
     </style>
 </head>
