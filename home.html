@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes move-twink-back {
+            from {background-position: 0 0;}
+            to {background-position: -10000px 5000px;}
+        }
+
+        @keyframes move-twink-back-slow {
+            from {background-position: 0 0;}
+            to {background-position: -5000px 2500px;}
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600; /* Semibold */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: black;
+        }
+
+        #stars, #stars2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat top center;
+            z-index: 0;
+        }
+
+        #stars {
+            animation: move-twink-back 133s linear infinite;
+        }
+
+        #stars2 {
+            background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png') repeat top center;
+            animation: move-twink-back-slow 67s linear infinite;
+        }
+
+        #promo-image {
+            max-width: 100%;
+            z-index: 1;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        #coming-soon {
+            font-size: 40px; /* Reduced to 80% of the original size */
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            color: silver;
+        }
+
+        .highlight {
+            color: #fcb327; /* Updated color for 'Chuckle' */
+        }
+
+        #countdown {
+            font-size: 60px; /* Increased size */
+            font-weight: 600; /* Semibold */
+            position: relative;
+            z-index: 2;
+            color: white; /* White color for the countdown */
+        }
+    </style>
+</head>
+<body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <img id="promo-image" src="https://i.imgur.com/fGsz44a.png" alt="Promotional Image">
+    <div id="coming-soon">
+        <span class="highlight">Chuckle</span> Meme Coin Coming Soon...
+    </div>
+    <div id="countdown"></div>
+    <script>
+        var countDownDate = new Date("May 1, 2024 00:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
