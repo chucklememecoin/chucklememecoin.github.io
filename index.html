@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chuckle Countdown Timer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://chucklememecoin.github.io/doris3.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Chuckle Countdown Timer" />
+    <meta property="og:description" content="Countdown to the Chuckle Meme Coin launch!" />
+    <meta property="og:image" content="https://i.imgur.com/fGsz44a.png" />
+    <meta property="og:url" content="https://chucklecrypto.com" />
     <style>
         @keyframes move-twink-back {
             from {background-position: 0 0;}
@@ -28,7 +32,6 @@
             margin: 0;
             overflow: hidden;
             background: black;
-            text-align: center; /* Ensure text is centered */
         }
 
         #stars, #stars2 {
@@ -60,7 +63,7 @@
         }
 
         #coming-soon {
-            font-size: 40px;
+            font-size: 40px; /* Reduced to 80% of the original size */
             margin-bottom: 30px;
             position: relative;
             z-index: 2;
@@ -68,27 +71,15 @@
         }
 
         .highlight {
-            color: #fcb327;
+            color: #fcb327; /* Updated color for 'Chuckle' */
         }
 
         #countdown {
-            font-size: 60px;
-            font-weight: 600;
+            font-size: 60px; /* Increased size */
+            font-weight: 600; /* Semibold */
             position: relative;
             z-index: 2;
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-            #countdown {
-                font-size: 30px;
-            }
-            #coming-soon {
-                font-size: 20px;
-            }
-            #promo-image {
-                max-width: 50%;
-            }
+            color: white; /* White color for the countdown */
         }
     </style>
 </head>
@@ -97,7 +88,7 @@
     <div id="stars2"></div>
     <img id="promo-image" src="https://i.imgur.com/fGsz44a.png" alt="Promotional Image">
     <div id="coming-soon">
-        <span class="highlight">Chuckle</span> Meme Coin<br>Coming Soon...
+        <span class="highlight">Chuckle</span> Meme Coin Coming Soon...
     </div>
     <div id="countdown"></div>
     <script>
