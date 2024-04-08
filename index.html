@@ -11,7 +11,7 @@
     <meta property="og:image" content="https://i.imgur.com/fGsz44a.png" />
     <meta property="og:url" content="https://chucklecrypto.com" />
     <style>
-        @keyframes move-twink-back {
+      @keyframes move-twink-back {
             from {background-position: 0 0;}
             to {background-position: -10000px 5000px;}
         }
@@ -32,6 +32,7 @@
             margin: 0;
             overflow: hidden;
             background: black;
+            text-align: center; /* Ensure text is centered */
         }
 
         #stars, #stars2 {
@@ -63,7 +64,7 @@
         }
 
         #coming-soon {
-            font-size: 40px; /* Reduced to 80% of the original size */
+            font-size: 40px;
             margin-bottom: 30px;
             position: relative;
             z-index: 2;
@@ -71,15 +72,27 @@
         }
 
         .highlight {
-            color: #fcb327; /* Updated color for 'Chuckle' */
+            color: #fcb327;
         }
 
         #countdown {
-            font-size: 60px; /* Increased size */
-            font-weight: 600; /* Semibold */
+            font-size: 60px;
+            font-weight: 600;
             position: relative;
             z-index: 2;
-            color: white; /* White color for the countdown */
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            #countdown {
+                font-size: 30px;
+            }
+            #coming-soon {
+                font-size: 20px;
+            }
+            #promo-image {
+                max-width: 50%;
+            }
         }
     </style>
 </head>
@@ -88,7 +101,7 @@
     <div id="stars2"></div>
     <img id="promo-image" src="https://i.imgur.com/fGsz44a.png" alt="Promotional Image">
     <div id="coming-soon">
-        <span class="highlight">Chuckle</span> Meme Coin Coming Soon...
+        <span class="highlight">Chuckle</span> Meme Coin<br>Coming Soon...
     </div>
     <div id="countdown"></div>
     <script>
